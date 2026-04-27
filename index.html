@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Англоязычный сленг подростков</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* --- Переменные и общий сброс --- */
+        :root {
+            --bg: #f8faff;
+            --primary: #5a5fbf;
+            --accent: #ff7b9c;
+            --text: #333;
+            --light: #ffffff;
+            --hover: #e0eaff;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- Анимация слов в заголовках --- */
+        .animated-word {
+            display: inline-block;
+            transition: transform 0.2s ease-out, color 0.2s ease-out;
+            margin-right: 5px;
+            white-space: nowrap;
+        }
+
+        .animated-word:hover {
+            transform: translateY(-5px) scale(1.05);
+            color: var(--accent);
+        }
+
+        p .animated-word:hover {
+            transform: none;
+            color: var(--text);
+        }
+
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.4em;
+            opacity: 0.9;
+            color: var(--light);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: var(--light);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 15px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: var(--hover);
+            color: var(--accent);
+        }
+
+        nav a.active {
+            box-shadow: 0 6px 18px rgba(90, 95, 191, 0.18);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 90px 18px 60px;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 6px 10px;
+            }
+        }
+
+        /* --- Sections & Content --- */
+        section {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 50px 30px;
+            background-color: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: var(--primary);
+            border-left: 6px solid var(--accent);
+            padding-left: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .small-note {
+            color: #666;
+            font-size: 0.98em;
+        }
+
+        /* --- Google Form Iframe --- */
+        #poll iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid var(--hover);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* --- Table --- */
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 35px;
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 760px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--light);
+            font-weight: 700;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+            cursor: default;
+        }
+
+        th:hover {
+            background-color: var(--accent);
+            color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9ff;
+        }
+
+        tr:hover td {
+            background-color: #f2f7ff;
+        }
+
+        /* --- Charts --- */
+        .charts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .chart-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            max-width: 430px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chart-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .chart-note {
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .chart-card canvas {
+            width: 100% !important;
+            height: 230px !important;
+            display: block;
+        }
+
+        .chart-fallback {
+            display: none;
+            padding: 18px;
+            border-radius: 12px;
+            background: #f8faff;
+            color: #555;
+            font-size: 0.95em;
+            border: 1px dashed var(--hover);
+        }
+
+        @media (min-width: 900px) {
+            .charts {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* --- Facts --- */
+        .fact-box {
+            background: linear-gradient(135deg, #e6eeff 0%, #fff0f5 100%);
+            padding: 34px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: var(--primary);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            font-size: 1.2em;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .fact-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e6eeff 0%, #fff0f5 100%);
+            border: 1px solid rgba(90,95,191,0.18);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .fact-card::before {
+            content: "";
+            position: absolute;
+            inset: -60px;
+            background: radial-gradient(circle at top left, rgba(255,123,156,0.18), transparent 55%);
+            transform: rotate(8deg);
+            opacity: 0.9;
+        }
+
+        .fact-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--primary));
+            opacity: 0.85;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 34px rgba(0,0,0,0.14);
+            border-color: rgba(255,123,156,0.35);
+        }
+
+        .fact-emoji {
+            position: relative;
+            z-index: 1;
+            font-size: 30px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 6px 10px rgba(0,0,0,0.10));
+        }
+
+        .fact-card p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .fact-card strong {
+            font-weight: 800;
+        }
+
+        @media (min-width: 768px) {
+            .facts-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .facts-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        /* --- Quiz --- */
+        .quiz {
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--hover);
+            margin-top: 30px;
+        }
+
+        .quiz-question {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .quiz h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .quiz label {
+            display: grid;
+            grid-template-columns: 22px 1fr;
+            align-items: start;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 12px 15px;
+            line-height: 1.35;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz label:hover {
+            background-color: var(--hover);
+        }
+
+        .quiz input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 0;
+            height: 0;
+            margin: 0;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .quiz label::before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            border-radius: 999px;
+            border: 2px solid rgba(90,95,191,.55);
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,.06);
+            transition: all .2s ease;
+        }
+
+        .quiz label:has(input[type="radio"]:checked)::before {
+            border-color: var(--primary);
+            background: radial-gradient(circle at center, var(--primary) 0 45%, #fff 46% 100%);
+        }
+
+        .quiz label:hover::before {
+            border-color: var(--accent);
+        }
+
+        .quiz label.correct {
+            background: rgba(16,185,129,.12);
+            border-color: rgba(16,185,129,.35);
+        }
+
+        .quiz label.incorrect {
+            background: rgba(239,68,68,.10);
+            border-color: rgba(239,68,68,.30);
+        }
+
+        .quiz label.correct::before {
+            border-color: var(--success);
+            background: radial-gradient(circle at center, var(--success) 0 45%, #fff 46% 100%);
+        }
+
+        .quiz label.incorrect::before {
+            border-color: var(--error);
+            background: radial-gradient(circle at center, var(--error) 0 45%, #fff 46% 100%);
+        }
+
+        #check-button {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--light);
+            padding: 14px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 20px rgba(90, 95, 191, 0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        #check-button:hover {
+            background: linear-gradient(90deg, #4d52b1 0%, #ff688f 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(90, 95, 191, 0.5);
+        }
+
+        #quiz-result {
+            padding: 15px;
+            font-size: 1em;
+            display: none;
+        }
+
+        #quiz-result.correct {
+            background: rgba(16,185,129,.12);
+            border: 1px solid rgba(16,185,129,.35);
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        #quiz-result.incorrect {
+            background: rgba(239,68,68,.10);
+            border: 1px solid rgba(239,68,68,.30);
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        #back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 54px;
+            height: 54px;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            z-index: 2000;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--light);
+            font-size: 22px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* ====== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНА ====== */
+        @media (max-width: 640px) {
+            body {
+                line-height: 1.6;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            .animated-word {
+                margin-right: 3px;
+            }
+
+            .animated-word:hover {
+                transform: none;
+            }
+
+            header {
+                padding: 78px 16px 52px;
+                border-radius: 0 0 26px 26px;
+            }
+
+            header h1 {
+                font-size: clamp(2rem, 10vw, 2.65rem);
+                line-height: 1.12;
+                margin-bottom: 16px;
+                letter-spacing: -0.5px;
+            }
+
+            header p {
+                font-size: 1rem;
+                line-height: 1.55;
+                max-width: 340px;
+            }
+
+            nav {
+                position: sticky;
+                top: 0;
+                justify-content: flex-start;
+                gap: 8px;
+                max-width: none;
+                width: calc(100% - 18px);
+                margin: -18px auto 0;
+                padding: 10px;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                border-radius: 18px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                flex: 0 0 auto;
+                scroll-snap-align: center;
+                font-size: 0.86rem;
+                padding: 8px 12px;
+                background: #f8faff;
+                white-space: nowrap;
+            }
+
+            nav a.active {
+                background: linear-gradient(135deg, rgba(90,95,191,0.13), rgba(255,123,156,0.16));
+            }
+
+            section {
+                width: calc(100% - 22px);
+                margin: 22px auto;
+                padding: 24px 16px;
+                border-radius: 18px;
+                box-shadow: 0 8px 22px rgba(0, 0, 0, 0.065);
+            }
+
+            section:hover {
+                box-shadow: 0 8px 22px rgba(0, 0, 0, 0.065);
+            }
+
+            h2 {
+                font-size: 1.55rem;
+                line-height: 1.25;
+                margin-bottom: 18px;
+                padding-left: 12px;
+                border-left-width: 5px;
+            }
+
+            p {
+                font-size: 0.98rem;
+                margin-bottom: 18px;
+            }
+
+            .small-note {
+                font-size: 0.9rem;
+            }
+
+            #poll iframe {
+                height: 620px;
+                border-radius: 14px;
+            }
+
+            /* Таблица на телефоне превращается в карточки */
+            .table-wrap {
+                overflow: visible;
+                margin-top: 22px;
+            }
+
+            table {
+                min-width: 0;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 14px;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tbody,
+            tr,
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            tr {
+                background: #fff;
+                border: 1px solid rgba(90,95,191,0.14);
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.055);
+            }
+
+            tr:nth-child(even) td {
+                background-color: transparent;
+            }
+
+            tr:hover td {
+                background-color: transparent;
+            }
+
+            td {
+                position: relative;
+                display: grid;
+                grid-template-columns: 112px 1fr;
+                gap: 10px;
+                padding: 12px 14px;
+                border-bottom: 1px solid #eef0ff;
+                text-align: left;
+                font-size: 0.93rem;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: 800;
+                color: var(--primary);
+                font-size: 0.82rem;
+            }
+
+            .charts {
+                gap: 16px;
+            }
+
+            .chart-card {
+                width: 100%;
+                max-width: none;
+                padding: 14px;
+                border-radius: 16px;
+            }
+
+            .chart-title {
+                font-size: 0.98rem;
+                line-height: 1.3;
+            }
+
+            .chart-card canvas {
+                height: 255px !important;
+            }
+
+            #factorsChart {
+                height: 285px !important;
+            }
+
+            .chart-note,
+            .chart-fallback {
+                font-size: 0.86rem;
+            }
+
+            .fact-box {
+                margin-top: 18px;
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+            }
+
+            .facts-grid {
+                gap: 14px;
+            }
+
+            .fact-card {
+                padding: 18px 16px 18px 18px;
+                border-radius: 16px;
+            }
+
+            .fact-card:hover {
+                transform: none;
+                box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+            }
+
+            .fact-emoji {
+                font-size: 26px;
+                margin-bottom: 8px;
+            }
+
+            .fact-card p {
+                font-size: 0.94rem;
+            }
+
+            .quiz {
+                padding: 18px 14px;
+                border-radius: 16px;
+            }
+
+            .quiz-question {
+                margin-bottom: 20px;
+                padding-bottom: 14px;
+            }
+
+            .quiz h3 {
+                font-size: 1.05rem;
+                line-height: 1.35;
+                margin-bottom: 12px;
+            }
+
+            .quiz label {
+                grid-template-columns: 20px 1fr;
+                gap: 10px;
+                padding: 12px;
+                font-size: 0.92rem;
+                border-radius: 12px;
+            }
+
+            .quiz label::before {
+                width: 17px;
+                height: 17px;
+            }
+
+            #check-button {
+                width: 100%;
+                padding: 13px 16px;
+                font-size: 0.92rem;
+                letter-spacing: 0.4px;
+            }
+
+            #quiz-result {
+                font-size: 0.92rem;
+                line-height: 1.45;
+            }
+
+            footer {
+                margin-top: 28px;
+                padding: 32px 16px;
+                border-radius: 22px 22px 0 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            #back-to-top {
+                width: 46px;
+                height: 46px;
+                right: 14px;
+                bottom: calc(14px + env(safe-area-inset-bottom));
+                font-size: 19px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            header h1 {
+                font-size: 1.85rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 7px 10px;
+            }
+
+            section {
+                width: calc(100% - 16px);
+                padding: 22px 13px;
+            }
+
+            td {
+                grid-template-columns: 95px 1fr;
+                gap: 8px;
+                font-size: 0.88rem;
+            }
+
+            td::before {
+                font-size: 0.78rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>
+        <span class="animated-word">Англоязычный</span>
+        <span class="animated-word">сленг</span>
+        <span class="animated-word">в</span>
+        <span class="animated-word">речи</span>
+        <span class="animated-word">подростков</span>
+    </h1>
+    <p>
+        <span class="animated-word">Исследование</span>
+        <span class="animated-word">влияния</span>
+        <span class="animated-word">сленга</span>
+        <span class="animated-word">на</span>
+        <span class="animated-word">современную</span>
+        <span class="animated-word">коммуникацию</span>
+    </p>
+</header>
+
+<nav>
+    <a href="#about">Главная</a>
+    <a href="#poll">Опрос</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#analysis">Анализ</a>
+    <a href="#facts">Факты</a>
+    <a href="#quiz-section">Квиз</a>
+</nav>
+
+<section id="about" class="visible">
+    <h2>
+        <span class="animated-word">О</span>
+        <span class="animated-word">проекте</span>
+    </h2>
+
+    <p>
+        Этот сайт — часть исследовательского проекта о том, как англоязычный сленг влияет на речь подростков
+        и почему он так быстро распространяется в современном общении. В работе собраны популярные слова и их
+        значения, а также представлены результаты опроса и диаграммы, которые показывают, какие выражения подростки
+        используют чаще всего и как они относятся к англицизмам.
+    </p>
+
+    <p>
+        Цель сайта — сделать эту тему понятной и полезной для школьников, учителей и родителей: здесь можно быстро
+        разобраться в современных терминах, увидеть результаты исследования и проверить себя в мини-квизе.
+    </p>
+</section>
+
+<section id="poll">
+    <h2>
+        <span class="animated-word">Опрос</span>
+        <span class="animated-word">среди</span>
+        <span class="animated-word">подростков</span>
+    </h2>
+
+    <p>
+        В рамках практической части проекта был проведён опрос среди учащихся подросткового возраста. Он помог
+        определить, как часто подростки используют англоязычный сленг, в каких ситуациях это происходит и как они
+        относятся к заимствованным словам.
+    </p>
+
+    <p class="small-note">
+        Ниже представлена форма, которая использовалась для сбора ответов.
+    </p>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZcrj5EfKX5jGSjPZ-_qQ0npgf9hdULKWpboIpYchYHuUzpw/viewform?embedded=true">
+        Загрузка…
+    </iframe>
+</section>
+
+<section id="catalog">
+    <h2>
+        <span class="animated-word">Каталог</span>
+        <span class="animated-word">сленговых</span>
+        <span class="animated-word">слов</span>
+    </h2>
+
+    <p>
+        В каталоге собраны распространённые англоязычные сленговые выражения, которые встречаются в речи подростков,
+        интернет-коммуникации, играх, соцсетях и медиа.
+    </p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+            <tr>
+                <th>Категория</th>
+                <th>Слово</th>
+                <th>Значение</th>
+                <th>Пример</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Состояние</td>
+                <td>вайб</td>
+                <td>Атмосфера, настроение (vibe)</td>
+                <td>Хороший вайб у этого места</td>
+            </tr>
+            <tr>
+                <td>Реакция</td>
+                <td>кринж</td>
+                <td>Неловкая ситуация, чувство стыда за кого-то (cringe)</td>
+                <td>Это был полный кринж</td>
+            </tr>
+            <tr>
+                <td>Чувства</td>
+                <td>краш</td>
+                <td>Предмет обожания, человек, который очень нравится (crush)</td>
+                <td>У меня краш на эту певицу</td>
+            </tr>
+            <tr>
+                <td>Оценка</td>
+                <td>топ</td>
+                <td>Лучший, высший класс (top)</td>
+                <td>Этот фильм просто топ</td>
+            </tr>
+            <tr>
+                <td>Оценка</td>
+                <td>изи</td>
+                <td>Легко, просто (easy)</td>
+                <td>Прошёл уровень на изи</td>
+            </tr>
+            <tr>
+                <td>Медиа</td>
+                <td>хайп</td>
+                <td>Ажиотаж, повышенное внимание к теме (hype)</td>
+                <td>Эта песня сейчас на хайпе</td>
+            </tr>
+            <tr>
+                <td>Действие</td>
+                <td>чилить</td>
+                <td>Отдыхать, расслабляться (chill)</td>
+                <td>Давай почилим сегодня вечером</td>
+            </tr>
+            <tr>
+                <td>Общение</td>
+                <td>чекать</td>
+                <td>Проверять, смотреть (check)</td>
+                <td>Надо чекать новые сообщения</td>
+            </tr>
+            <tr>
+                <td>Внешность</td>
+                <td>лук</td>
+                <td>Образ, наряд (look)</td>
+                <td>У тебя сегодня классный лук</td>
+            </tr>
+            <tr>
+                <td>Оценка</td>
+                <td>имба</td>
+                <td>Что-то слишком сильное, лучше остальных (imbalanced)</td>
+                <td>Этот персонаж просто имба</td>
+            </tr>
+            <tr>
+                <td>Поведение</td>
+                <td>рофлить</td>
+                <td>Сильно смеяться, шутить (ROFL)</td>
+                <td>Мы долго рофлили над этой ситуацией</td>
+            </tr>
+            <tr>
+                <td>Соцсети</td>
+                <td>репост</td>
+                <td>Повторная публикация (repost)</td>
+                <td>Сделай репост этой записи</td>
+            </tr>
+            <tr>
+                <td>Удача</td>
+                <td>рандом</td>
+                <td>Случайность (random)</td>
+                <td>Это был полный рандом</td>
+            </tr>
+            <tr>
+                <td>Согласие</td>
+                <td>окей</td>
+                <td>Хорошо, да (okay)</td>
+                <td>Окей, я согласен</td>
+            </tr>
+            <tr>
+                <td>Самовыражение</td>
+                <td>флексить</td>
+                <td>Хвастаться, выпендриваться (flex)</td>
+                <td>Хватит флексить своей машиной</td>
+            </tr>
+            <tr>
+                <td>Конфликт</td>
+                <td>пруф</td>
+                <td>Доказательство, подтверждение (proof)</td>
+                <td>Где пруфы твоих слов?</td>
+            </tr>
+            <tr>
+                <td>Соцсети</td>
+                <td>свайпнуть</td>
+                <td>Провести пальцем по экрану (swipe)</td>
+                <td>Свайпни вправо, чтобы посмотреть дальше</td>
+            </tr>
+            <tr>
+                <td>Общение</td>
+                <td>хейтить</td>
+                <td>Критиковать, выражать неприязнь (hate)</td>
+                <td>Не надо хейтить чужое мнение</td>
+            </tr>
+            <tr>
+                <td>Поведение</td>
+                <td>токсик</td>
+                <td>Человек с негативным поведением (toxic)</td>
+                <td>Он ведёт себя как токсик</td>
+            </tr>
+            <tr>
+                <td>Фанатская культура</td>
+                <td>стэнить</td>
+                <td>Быть преданным фанатом кого-либо или чего-либо (stan)</td>
+                <td>Она стэнит эту группу уже несколько лет</td>
+            </tr>
+            <tr>
+                <td>Медиа</td>
+                <td>кликбейт</td>
+                <td>Заголовок или картинка для привлечения внимания (clickbait)</td>
+                <td>Это видео похоже на кликбейт</td>
+            </tr>
+            <tr>
+                <td>Действие</td>
+                <td>скипнуть</td>
+                <td>Пропустить, не смотреть или не выполнять (skip)</td>
+                <td>Можно скипнуть эту рекламу</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="analysis">
+    <h2>
+        <span class="animated-word">Анализ</span>
+        <span class="animated-word">результатов</span>
+    </h2>
+
+    <p>
+        После обработки результатов опроса были построены диаграммы, отражающие популярность сленговых слов,
+        ситуации их употребления, отношение подростков к англицизмам и причины распространения англоязычного сленга.
+    </p>
+
+    <div class="charts">
+        <div class="chart-card">
+            <div class="chart-title">Топ сленговых слов</div>
+            <canvas id="wordsChart"></canvas>
+            <div class="chart-fallback">Диаграмма загрузится при подключении Chart.js.</div>
+            <div class="chart-note">По результатам опроса среди 113 респондентов.</div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-title">Где чаще используют сленг</div>
+            <canvas id="whereChart"></canvas>
+            <div class="chart-fallback">Диаграмма загрузится при подключении Chart.js.</div>
+            <div class="chart-note">Чаще всего сленг используется в общении с друзьями и в переписке.</div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-title">Отношение к англицизмам</div>
+            <canvas id="attitudeChart"></canvas>
+            <div class="chart-fallback">Диаграмма загрузится при подключении Chart.js.</div>
+            <div class="chart-note">Наиболее распространённая позиция — нейтральная.</div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-title">Почему используют сленг</div>
+            <canvas id="factorsChart"></canvas>
+            <div class="chart-fallback">Диаграмма загрузится при подключении Chart.js.</div>
+            <div class="chart-note">Основные причины — удобство и влияние трендов.</div>
+        </div>
+    </div>
+</section>
+
+<section id="facts">
+    <h2>
+        <span class="animated-word">Интересные</span>
+        <span class="animated-word">факты</span>
+    </h2>
+
+    <div class="fact-box">
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-emoji">⚡</div>
+                <p>
+                    <strong>Сленг распространяется быстрее обычных слов.</strong><br>
+                    Благодаря соцсетям и мемам новое выражение может стать популярным всего за несколько дней.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-emoji">🔤</div>
+                <p>
+                    <strong>Большинство сленговых слов адаптируется под русский язык.</strong><br>
+                    Заимствованные слова получают суффиксы и формы: <em>чилить, рофлить, кринжовый</em>.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-emoji">🎭</div>
+                <p>
+                    <strong>Сленг передаёт эмоции быстрее, чем нейтральная речь.</strong><br>
+                    Одно слово может сразу показать иронию, одобрение или неловкость.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-emoji">🧠</div>
+                <p>
+                    <strong>Сленг зависит от возраста и окружения.</strong><br>
+                    Одни и те же слова могут быть актуальны для подростков и непонятны старшему поколению.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-emoji">📚</div>
+                <p>
+                    <strong>Использование сленга — не признак неграмотности.</strong><br>
+                    Важнее уметь различать, где уместен сленг, а где нужна литературная речь.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-emoji">🧩</div>
+                <p>
+                    <strong>Сленг часто «живёт» короткими волнами.</strong><br>
+                    Некоторые слова быстро становятся модными, а потом так же быстро исчезают — их сменяют новые тренды.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="quiz-section">
+    <h2>
+        <span class="animated-word">Проверь</span>
+        <span class="animated-word">себя!</span>
+        <span class="animated-word">Мини-квиз</span>
+        <span class="animated-word">по</span>
+        <span class="animated-word">сленгу</span>
+    </h2>
+
+    <div class="quiz">
+        <form id="quiz-form">
+            <div class="quiz-question">
+                <h3>1. Что значит слово «флексить»?</h3>
+                <label><input type="radio" name="q1" value="a"> Отдыхать и расслабляться</label>
+                <label><input type="radio" name="q1" value="b"> Быстро двигаться</label>
+                <label><input type="radio" name="q1" value="c"> Хвастаться чем-то, выпендриваться</label>
+                <label><input type="radio" name="q1" value="d"> Делать зарядку</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>2. Что значит «рофлить»?</h3>
+                <label><input type="radio" name="q2" value="a"> Сильно смеяться или шутить</label>
+                <label><input type="radio" name="q2" value="b"> Быстро работать</label>
+                <label><input type="radio" name="q2" value="c"> Ссориться с кем-то</label>
+                <label><input type="radio" name="q2" value="d"> Делать селфи</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>3. Слово «имба» чаще всего описывает что-то...</h3>
+                <label><input type="radio" name="q3" value="a"> Ненужное</label>
+                <label><input type="radio" name="q3" value="b"> Обычное</label>
+                <label><input type="radio" name="q3" value="c"> Дорогое</label>
+                <label><input type="radio" name="q3" value="d"> Чрезмерно сильное, несбалансированное</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>4. Что означает слово «пруф»?</h3>
+                <label><input type="radio" name="q4" value="a"> Доказательство, подтверждение</label>
+                <label><input type="radio" name="q4" value="b"> Качественный продукт</label>
+                <label><input type="radio" name="q4" value="c"> Проверка орфографии</label>
+                <label><input type="radio" name="q4" value="d"> Печатный текст</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>5. В каком случае чаще всего используется слово «изи»?</h3>
+                <label><input type="radio" name="q5" value="a"> Когда что-то очень сложное</label>
+                <label><input type="radio" name="q5" value="b"> Когда нужно быстро бежать</label>
+                <label><input type="radio" name="q5" value="c"> Когда что-то очень простое, лёгкое</label>
+                <label><input type="radio" name="q5" value="d"> Когда ты отдыхаешь</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>6. Что значит «свайпнуть»?</h3>
+                <label><input type="radio" name="q6" value="a"> Быстро писать</label>
+                <label><input type="radio" name="q6" value="b"> Провести пальцем по экрану</label>
+                <label><input type="radio" name="q6" value="c"> Сделать селфи</label>
+                <label><input type="radio" name="q6" value="d"> Сохранить фото</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>7. Что означает «хейтить»?</h3>
+                <label><input type="radio" name="q7" value="a"> Сильно любить</label>
+                <label><input type="radio" name="q7" value="b"> Быстро печатать</label>
+                <label><input type="radio" name="q7" value="c"> Делать комплименты</label>
+                <label><input type="radio" name="q7" value="d"> Критиковать, выражать неприязнь</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>8. Кого называют «токсиком»?</h3>
+                <label><input type="radio" name="q8" value="a"> Человека, который занимается спортом</label>
+                <label><input type="radio" name="q8" value="b"> Человека, который много ест</label>
+                <label><input type="radio" name="q8" value="c"> Человека с негативным, «отравляющим» поведением</label>
+                <label><input type="radio" name="q8" value="d"> Человека, который любит природу</label>
+            </div>
+
+            <div class="quiz-question">
+                <h3>9. Что значит «стэнить»?</h3>
+                <label><input type="radio" name="q9" value="a"> Быть преданным фанатом кого-либо или чего-либо</label>
+                <label><input type="radio" name="q9" value="b"> Постоянно лгать</label>
+                <label><input type="radio" name="q9" value="c"> Быстро бегать</label>
+                <label><input type="radio" name="q9" value="d"> Учиться усердно</label>
+            </div>
+
+            <button type="button" id="check-button">Проверить результаты</button>
+        </form>
+
+        <div id="quiz-result"></div>
+    </div>
+</section>
+
+<footer>
+    <p>
+        © 2026
+        <span class="animated-word">Исследование</span>
+        <span class="animated-word">англоязычного</span>
+        <span class="animated-word">сленга.</span>
+        <span class="animated-word">Все</span>
+        <span class="animated-word">права</span>
+        <span class="animated-word">защищены.</span>
+    </p>
+</footer>
+
+<button id="back-to-top" aria-label="Наверх" title="Наверх">↑</button>
+
+<!-- Подключаем Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    /* ====== Подписи для мобильной версии таблицы ====== */
+    function setupMobileTableLabels() {
+        document.querySelectorAll('table').forEach(table => {
+            const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+
+            table.querySelectorAll('tbody tr').forEach(row => {
+                Array.from(row.children).forEach((cell, index) => {
+                    if (headers[index]) {
+                        cell.setAttribute('data-label', headers[index]);
+                    }
+                });
+            });
+        });
+    }
+
+    /* ====== Квиз ====== */
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'a',
+        q3: 'd',
+        q4: 'a',
+        q5: 'c',
+        q6: 'b',
+        q7: 'd',
+        q8: 'c',
+        q9: 'a'
+    };
+
+    document.getElementById('check-button').addEventListener('click', function() {
+        const form = document.getElementById('quiz-form');
+        const resultDiv = document.getElementById('quiz-result');
+
+        let score = 0;
+        let totalQuestions = 0;
+        let isAllAnswered = true;
+
+        form.querySelectorAll('label.correct, label.incorrect').forEach(label => {
+            label.classList.remove('correct', 'incorrect');
+        });
+
+        for (const [question, answer] of Object.entries(correctAnswers)) {
+            const radios = form.elements[question];
+            if (!radios) continue;
+
+            totalQuestions++;
+
+            let selectedRadio = null;
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedRadio = radios[i];
+                    break;
+                }
+            }
+
+            if (!selectedRadio) {
+                isAllAnswered = false;
+                continue;
+            }
+
+            const selectedLabel = selectedRadio.closest('label');
+
+            let correctRadio = null;
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].value === answer) {
+                    correctRadio = radios[i];
+                    break;
+                }
+            }
+
+            const correctLabel = correctRadio ? correctRadio.closest('label') : null;
+
+            if (selectedRadio.value === answer) {
+                score++;
+                if (selectedLabel) selectedLabel.classList.add('correct');
+            } else {
+                if (selectedLabel) selectedLabel.classList.add('incorrect');
+                if (correctLabel) correctLabel.classList.add('correct');
+            }
+        }
+
+        resultDiv.style.display = 'block';
+
+        if (!isAllAnswered) {
+            resultDiv.className = 'incorrect';
+            resultDiv.innerHTML = '🤔 Пожалуйста, ответьте на все вопросы!';
+            return;
+        }
+
+        const percentage = Math.round((score / totalQuestions) * 100);
+
+        let feedback = '';
+
+        if (percentage === 100) {
+            feedback = '⭐ Идеально! Ты настоящий эксперт по сленгу!';
+            resultDiv.className = 'correct';
+        } else if (percentage >= 70) {
+            feedback = '👍 Отличный результат! Ты почти в теме!';
+            resultDiv.className = 'correct';
+        } else {
+            feedback = '📚 Есть куда расти! Сленг быстро меняется, но его можно легко освоить.';
+            resultDiv.className = 'incorrect';
+        }
+
+        resultDiv.innerHTML = `${feedback}<br>Ты набрал ${score} из ${totalQuestions} правильных ответов (${percentage}%).`;
+    });
+
+    /* ====== Анимация появления секций ====== */
+    const pageSections = document.querySelectorAll('section');
+
+    document.getElementById('about').classList.add('visible');
+
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observerInstance.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    pageSections.forEach(section => {
+        if (section.id !== 'about') {
+            observer.observe(section);
+        }
+    });
+
+    /* ====== Подсветка активного пункта меню ====== */
+    function setupScrollSpy() {
+        const nav = document.querySelector('nav');
+        const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+        const sections = navLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        function setActive(id) {
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${id}`;
+                link.classList.toggle('active', isActive);
+
+                if (isActive && window.matchMedia('(max-width: 640px)').matches) {
+                    link.scrollIntoView({
+                        behavior: 'smooth',
+                        inline: 'center',
+                        block: 'nearest'
+                    });
+                }
+            });
+        }
+
+        function onScroll() {
+            const navHeight = nav ? nav.offsetHeight : 0;
+            const line = navHeight + 20;
+
+            let currentId = sections[0]?.id;
+
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+
+                if (rect.top <= line && rect.bottom > line) {
+                    currentId = section.id;
+                    break;
+                }
+
+                if (rect.top <= line) {
+                    currentId = section.id;
+                }
+            }
+
+            if (currentId) setActive(currentId);
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (!target) return;
+
+                event.preventDefault();
+
+                const navHeight = nav ? nav.offsetHeight : 0;
+                const y = window.scrollY + target.getBoundingClientRect().top - navHeight - 15;
+
+                window.scrollTo({ top: y, behavior: 'smooth' });
+                setActive(target.id);
+            });
+        });
+    }
+
+    /* ====== Кнопка наверх ====== */
+    function setupBackToTop() {
+        const button = document.getElementById('back-to-top');
+        if (!button) return;
+
+        function toggle() {
+            if (window.scrollY > 350) {
+                button.classList.add('show');
+            } else {
+                button.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('scroll', toggle, { passive: true });
+        toggle();
+
+        button.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /* ====== Диаграммы ====== */
+    function renderCharts() {
+        const isMobile = window.matchMedia('(max-width: 640px)').matches;
+
+        if (typeof Chart === 'undefined') {
+            document.querySelectorAll('.chart-card canvas').forEach(canvas => {
+                canvas.style.display = 'none';
+            });
+
+            document.querySelectorAll('.chart-fallback').forEach(block => {
+                block.style.display = 'block';
+            });
+
+            return;
+        }
+
+        const words = [
+            { name: 'Кринж', percent: 42.5 },
+            { name: 'Вайб',  percent: 37.2 },
+            { name: 'Хайп',  percent: 20.4 },
+        ];
+
+        const where = [
+            { name: 'В общении с друзьями', percent: 46.9 },
+            { name: 'В переписке', percent: 38.9 },
+            { name: 'Практически не используется', percent: 14.2 },
+        ];
+
+        const attitude = [
+            { name: 'Нейтральное',  percent: 45.1 },
+            { name: 'Положительное', percent: 35.4 },
+            { name: 'Отрицательное', percent: 19.5 },
+        ];
+
+        const factors = [
+            { name: 'Так короче и удобнее', percent: 47.8 },
+            { name: 'Чтобы быть «в теме»', percent: 39.8 },
+            { name: 'Затрудняюсь ответить', percent: 12.4 },
+        ];
+
+        const baseLegend = {
+            position: 'bottom',
+            labels: {
+                boxWidth: isMobile ? 9 : 10,
+                boxHeight: isMobile ? 9 : 10,
+                padding: isMobile ? 8 : 10,
+                font: { size: isMobile ? 10 : 11 }
+            }
+        };
+
+        const baseTooltip = {
+            titleFont: { size: isMobile ? 10 : 11 },
+            bodyFont: { size: isMobile ? 10 : 11 },
+            padding: isMobile ? 8 : 10
+        };
+
+        function resetChart(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return null;
+
+            const existing = Chart.getChart(canvas);
+            if (existing) existing.destroy();
+
+            return canvas;
+        }
+
+        const c1 = resetChart('wordsChart');
+        if (c1) {
+            new Chart(c1, {
+                type: 'bar',
+                data: {
+                    labels: words.map(item => item.name),
+                    datasets: [{
+                        data: words.map(item => item.percent),
+                        label: 'Процент (%)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { ticks: { font: { size: isMobile ? 10 : 11 } } },
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 100,
+                            ticks: {
+                                font: { size: isMobile ? 10 : 11 },
+                                callback: value => value + '%'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            ...baseTooltip,
+                            callbacks: {
+                                label: context => `${context.parsed.y}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        const c2 = resetChart('whereChart');
+        if (c2) {
+            new Chart(c2, {
+                type: 'doughnut',
+                data: {
+                    labels: where.map(item => item.name),
+                    datasets: [{
+                        data: where.map(item => item.percent)
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: baseLegend,
+                        tooltip: {
+                            ...baseTooltip,
+                            callbacks: {
+                                label: context => `${context.label}: ${context.parsed}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        const c3 = resetChart('attitudeChart');
+        if (c3) {
+            new Chart(c3, {
+                type: 'pie',
+                data: {
+                    labels: attitude.map(item => item.name),
+                    datasets: [{
+                        data: attitude.map(item => item.percent)
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: baseLegend,
+                        tooltip: {
+                            ...baseTooltip,
+                            callbacks: {
+                                label: context => `${context.label}: ${context.parsed}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        const c4 = resetChart('factorsChart');
+        if (c4) {
+            new Chart(c4, {
+                type: 'bar',
+                data: {
+                    labels: factors.map(item => item.name),
+                    datasets: [{
+                        data: factors.map(item => item.percent),
+                        label: 'Процент (%)'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 8
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                font: { size: isMobile ? 10 : 11 },
+                                callback: function(value) {
+                                    const label = this.getLabelForValue(value);
+                                    const max = 22;
+
+                                    if (label.length <= max) return label;
+
+                                    return [
+                                        label.slice(0, max) + '…',
+                                        label.slice(max, max + max)
+                                    ];
+                                }
+                            }
+                        },
+                        x: {
+                            beginAtZero: true,
+                            suggestedMax: 100,
+                            ticks: {
+                                font: { size: isMobile ? 10 : 11 },
+                                callback: value => value + '%'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            ...baseTooltip,
+                            callbacks: {
+                                label: context => `${context.parsed.x}%`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    function initUI() {
+        setupMobileTableLabels();
+        setupScrollSpy();
+        setupBackToTop();
+        renderCharts();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initUI);
+    } else {
+        initUI();
+    }
+</script>
+</body>
+</html>
